@@ -1,0 +1,334 @@
+/*******************************************************
+   1. RESET & BASIS OPSÆTNING
+*******************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+body {
+  background-color: #ebe3d5;
+  font-family: "Google Sans Code", monospace;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+/*******************************************************
+   2. TYPOGRAFI (Overskrifter og tekst)
+*******************************************************/
+h1 {
+  color: #1d1d1d;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.h1produkter {
+  margin-top: 2rem;
+}
+
+.h3produkter {
+  font-size: 3rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.pprodukter {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+/*******************************************************
+   3. KATEGORI-KORT (Forsiden)
+*******************************************************/
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background-color: #59674c;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 30px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.category-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #fbffed;
+  font-family: "Google Sans Code", monospace;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*******************************************************
+   4. PRODUKTKASSER (Listen med varer)
+*******************************************************/
+.produkter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.produkt {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.produkt:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tshirt {
+  max-width: 100%;
+}
+
+.badge-udsolgt,
+.badge-tilbud {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-family: "Google Sans Code", monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.badge-udsolgt {
+  background-color: #1d1d1d;
+  color: #ebe3d5;
+}
+
+.produkt.udsolgt img {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.badge-tilbud {
+  background-color: #d9534f;
+  color: white;
+}
+
+.pris-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pris-container p {
+  margin: 0 !important;
+  white-space: nowrap;
+}
+
+.gammel-pris {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1rem;
+}
+
+.ny-pris {
+  color: #d9534f;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/*******************************************************
+   5. PRODUKTSIDE (Den enkelte vares detaljeside)
+*******************************************************/
+.produktside {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.foto {
+  width: 100%;
+  margin-left: 0;
+  padding: 20px;
+}
+
+.foto img {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.beskrivelse {
+  margin-left: 0;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.beskrivelse h1 {
+  font-size: 3rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+}
+
+.beskrivelse h2 {
+  color: #555555;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+.beskrivelse p:nth-of-type(1) {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1d1d1d;
+  margin-bottom: 0.5rem;
+}
+
+.beskrivelse p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #5ba347;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.add-to-basket {
+  background-color: #5ba347;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Google Sans Code", monospace;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-to-basket:hover {
+  background-color: #4a8739;
+  transform: scale(1.02);
+}
+
+.midten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/*******************************************************
+   6. TABLET (Skærme over 768px)
+*******************************************************/
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .produkter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+  }
+}
+
+/*******************************************************
+   7. DESKTOP (Skærme over 1024px)
+*******************************************************/
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 7rem;
+    margin-top: 12rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .tshirt {
+    max-width: 250px;
+  }
+
+  .produkter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 60px;
+  }
+
+  .produktside {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .foto {
+    max-width: 700px;
+    margin-left: 4rem;
+    padding: 50px;
+  }
+
+  .beskrivelse {
+    margin-left: 8rem;
+    padding: 50px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .add-to-basket {
+    width: fit-content;
+    margin-top: 3rem;
+  }
+}
