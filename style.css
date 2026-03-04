@@ -43,13 +43,13 @@ p {
 }
 
 .h3produkter {
-  font-size: 3rem;
+  font-size: 1rem;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
 .pprodukter {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   margin-top: 5px;
 }
 
@@ -180,6 +180,30 @@ p {
   font-size: 1.3rem;
 }
 
+.knap {
+  display: inline-block;
+  font-family: "Bowlby One", sans-serif;
+  background-color: #59674c;
+  color: rgb(255, 255, 255);
+
+  border-radius: 15px;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  justify-self: start;
+
+  align-self: end;
+
+  font-family: "Google Sans Code", monospace;
+  margin-top: 20px;
+  margin-right: 5.1rem;
+  font-size: 1.5rem;
+}
+
+.knap:hover {
+  background-color: var(--dark-blue);
+  color: var(--creme);
+}
 /*******************************************************
    5. PRODUKTSIDE (Den enkelte vares detaljeside)
 *******************************************************/
