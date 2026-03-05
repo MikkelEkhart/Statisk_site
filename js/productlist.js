@@ -4,6 +4,9 @@ const myCategory = params.get("category");
 const listContainer = document.querySelector(".produkter");
 // min tilføjede knap
 const sortByPriceBtn = document.querySelector("#sortByPriceBtn");
+// nye knapper til filtrering af køn
+const filterWomenBtn = document.querySelector("#filterWomenBtn");
+const showAllBtn = document.querySelector("#showAllBtn");
 
 // liste til produkterne
 let allProducts = [];
@@ -27,13 +30,14 @@ function showProducts(products) {
 
   products.forEach((product) => {
     listContainer.innerHTML += `
+
      <div class="produkt">
-            <a href="product.html">
+            <a href="product.html?id=${product.id}">
                 <img class="tshirt" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="billede3">
             </a>
             <h3 class="h3produkter">${product.productdisplayname}</h3>
             <p class="pprodukter">${product.articletype}</p>
-            <p class="pprodukter">${product.price}</p>
+            <p class="pprodukter">${product.price} DKK</p>
             <a href="product.html?id=${product.id}" class="knap">Se mere</a>
         </div>
     `;
@@ -45,7 +49,18 @@ function sortByPriceAsc() {
   const sorted = [...allProducts].sort((a, b) => a.price - b.price);
   showProducts(sorted);
 }
+// ny funktion der filtrerer køn
+function filterByGender(targetGender) {
+  const filtered = allProducts.filter(
+    (product) =>
+      (product.gender || "").toLowerCase() === targetGender.toLowerCase(),
+  );
+  showProducts(filtered);
+}
 
 sortByPriceBtn.addEventListener("click", sortByPriceAsc);
+// ny eventlistener der gør at knapperne virker med funktionen
+filterWomenBtn.addEventListener("click", () => filterByGender("Women"));
+showAllBtn.addEventListener("click", () => showProducts(allProducts));
 
 getProducts();
