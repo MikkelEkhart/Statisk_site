@@ -18,7 +18,7 @@ function show(data) {
         <div class="beskrivelse">
             <h1>${data.productdisplayname}</h1>
             <h2>${data.articletype}</h2>
-            <p>${data.price}</p>
+            <p>${data.price} DKK</p>
             <p>Lagerstatus: ${data.soldout}</p>
             <button class="add-to-basket">Læg i kurv</button>
         </div>

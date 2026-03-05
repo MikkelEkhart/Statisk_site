@@ -106,14 +106,15 @@ p {
   background-color: #ffffff;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-  padding: 25px;
+  padding: 0 0 25px 0;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .produkt:hover {
@@ -123,6 +124,10 @@ p {
 
 .tshirt {
   max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
 }
 
 .badge-udsolgt,
@@ -191,12 +196,11 @@ p {
   transition: 0.3s;
   justify-self: start;
 
-  align-self: end;
+  align-self: center;
 
   font-family: "Google Sans Code", monospace;
   margin-top: 20px;
-  margin-right: 5.1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .knap:hover {
@@ -289,7 +293,9 @@ p {
   padding: 20px;
 }
 
-#sortByPriceBtn {
+#sortByPriceBtn,
+#showAllBtn,
+#filterWomenBtn {
   display: inline-block;
   background-color: #59674c;
   color: rgb(255, 255, 255);
@@ -301,13 +307,18 @@ p {
   justify-self: start;
 
   align-self: end;
-
+  margin-right: 1rem;
   font-family: "Google Sans Code", monospace;
   margin-top: 20px;
-  margin-right: 5.1rem;
   font-size: 1rem;
 }
 
+.knap-container {
+  display: flex;
+  justify-content: start;
+  padding-left: 60px;
+  padding-right: 20px;
+}
 /*******************************************************
    6. TABLET (Skærme over 768px)
 *******************************************************/
@@ -336,10 +347,6 @@ p {
 
   h2 {
     font-size: 2rem;
-  }
-
-  .tshirt {
-    max-width: 250px;
   }
 
   .produkter {
@@ -372,9 +379,5 @@ p {
   .add-to-basket {
     width: fit-content;
     margin-top: 3rem;
-  }
-
-  #sortByPriceBtn {
-    margin-left: 1200px;
   }
 }
