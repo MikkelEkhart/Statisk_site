@@ -2,6 +2,11 @@ const params = new URLSearchParams(window.location.search);
 const myCategory = params.get("category");
 
 const listContainer = document.querySelector(".produkter");
+// min tilføjede knap
+const sortByPriceBtn = document.querySelector("#sortByPriceBtn");
+
+// liste til produkterne
+let allProducts = [];
 
 const fetchUrl = myCategory
   ? `https://kea-alt-del.dk/t7/api/products?category=${encodeURIComponent(myCategory)}`
@@ -10,7 +15,11 @@ const fetchUrl = myCategory
 function getProducts() {
   fetch(fetchUrl)
     .then((res) => res.json())
-    .then((products) => showProducts(products));
+    .then((products) => {
+      //gemmer alle produkter i allProducts
+      allProducts = products;
+      showProducts(products);
+    });
 }
 
 function showProducts(products) {
@@ -26,10 +35,17 @@ function showProducts(products) {
             <p class="pprodukter">${product.articletype}</p>
             <p class="pprodukter">${product.price}</p>
             <a href="product.html?id=${product.id}" class="knap">Se mere</a>
-
         </div>
     `;
   });
 }
+
+// funktion der sorterer prisen, og listener på click til at sortere
+function sortByPriceAsc() {
+  const sorted = [...allProducts].sort((a, b) => a.price - b.price);
+  showProducts(sorted);
+}
+
+sortByPriceBtn.addEventListener("click", sortByPriceAsc);
 
 getProducts();

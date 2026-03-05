@@ -182,7 +182,6 @@ p {
 
 .knap {
   display: inline-block;
-  font-family: "Bowlby One", sans-serif;
   background-color: #59674c;
   color: rgb(255, 255, 255);
 
@@ -290,6 +289,25 @@ p {
   padding: 20px;
 }
 
+#sortByPriceBtn {
+  display: inline-block;
+  background-color: #59674c;
+  color: rgb(255, 255, 255);
+
+  border-radius: 15px;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  justify-self: start;
+
+  align-self: end;
+
+  font-family: "Google Sans Code", monospace;
+  margin-top: 20px;
+  margin-right: 5.1rem;
+  font-size: 1rem;
+}
+
 /*******************************************************
    6. TABLET (Skærme over 768px)
 *******************************************************/
@@ -354,5 +372,9 @@ p {
   .add-to-basket {
     width: fit-content;
     margin-top: 3rem;
+  }
+
+  #sortByPriceBtn {
+    margin-left: 1200px;
   }
 }
